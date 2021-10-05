@@ -1,7 +1,7 @@
 {% load static %}
 <html>
     <head>
-        <title>{% block title %}{% endblock %}</title>
+        <title>{% block title %}REGISTER - DONDE CREAR UNA CUENTA DE USUARIO{% endblock %}</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -27,7 +27,7 @@
 							{{ register_form|crispy }}                    
 							<button class="btn btn-primary" type="submit">Register</button>
 						</form>
-						<p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+						<p class="text-center">Si ya tienes una cuenta presiona acá el <a href="/login">login</a></p>
 					</div>
 
                     {% endblock %}

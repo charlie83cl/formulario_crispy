@@ -1,7 +1,7 @@
 {% load static %}
 <html>
     <head>
-        <title>{% block title %}{% endblock %}</title>
+        <title>{% block title %}LOGIN - DONDE INGRESAS TUS DATOS{% endblock %}</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -25,9 +25,10 @@
                         <form method="POST">
                             {% csrf_token %}
                             {{ login_form|crispy }}
-                            <button class="btn btn-primary" type="submit">Login</button>
+                        <br>
+                        <button class="btn btn-primary" type="submit">Login</button>
                         </form>
-                        <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
+                        <p class="text-center">Aun no tienes cuenta? <a href="/register">Registrarse</a>.</p>
                         </div>
 
                     {% endblock %}

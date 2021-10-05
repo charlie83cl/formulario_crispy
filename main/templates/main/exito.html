@@ -1,7 +1,7 @@
 {% load static %}
 <html>
     <head>
-        <title>{% block title %}{% endblock %}</title>
+        <title>{% block title %}EXITO - PAGINA DE BIENVENIDA AL USUARIO{% endblock %}</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -26,13 +26,16 @@
                             <br>
                             <li class="nav-item">
                             <a class="nav-link" href="{% url 'main:logout' %}">Logout</a>
-                            </li>
+                            </li><br>
+                            
+                            {{user.username}}<br>
+                            {{user.email}}
+                            {{user.password}}
                             {% else %}
                     
                             <li class="nav-item">
                             <a class="nav-link" href="/login">Login</a>
                             </li>
-                    
                             {% endif %}
                         </ul>
                         </div>
