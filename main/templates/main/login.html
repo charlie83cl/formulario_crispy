@@ -1,12 +1,38 @@
-{% load crispy_forms_tags %}
+{% load static %}
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            <a href="#" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <h1><a href="/">INICIO</a></h1>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% block content %}
 
-<!--Login--> 
-    <div class="container py-5">
-    <h1>Login</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{ login_form|crispy }}
-        <button class="btn btn-primary" type="submit">Login</button>
-    </form>
-    <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
-    </div>
+                    {% load crispy_forms_tags %}
+
+                    <!--Login--> 
+                        <div class="container py-5">
+                        <h1>Login</h1>
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ login_form|crispy }}
+                            <button class="btn btn-primary" type="submit">Login</button>
+                        </form>
+                        <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
+                        </div>
+
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,1 +1,32 @@
-<h1>Estás en el homepage</h1>
+{% extends 'main/base.html' %}
+
+{% load static %}
+<html>
+    <head>
+        <title>{% block title %}HOMEPAGE - LA PAGINA 1{% endblock %}</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            <a href="{% url 'homepage' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <h1><a href="/">HOMEPAGE</a></h1>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% block content %}
+                        <h1>Estás en el homepage</h1>
+                        <h4>gran nivel, hora vamos al siguiente desafio</h4>
+                        <a href="{% url 'main:login' %}">ir al login</a>
+                        <a href="{% url 'main:register'%}">ir al registro</a>
+                        <a href="{% url 'main:logout' %}">ir al logout</a>
+                        <a href="{% url 'main:exito' %}">ir a la bienvenida</a>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

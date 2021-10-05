@@ -17,26 +17,12 @@
                 <div class="col-md-8">
                     {% block content %}
 
-                    <h1>BIENVENIDO</h1>
+                    <h1>saliste cagando waren!</h1>
 
-                            {% if user.is_authenticated %}
-                            
-                            <a href="{% url 'main:homepage' %}"><h1>{{user.username}}</h1></a>
-                            </li>
-                            <br>
-                            <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main:logout' %}">Logout</a>
-                            </li>
-                            {% else %}
-                    
-                            <li class="nav-item">
-                            <a class="nav-link" href="/login">Login</a>
-                            </li>
-                    
-                            {% endif %}
-                        </ul>
-                        </div>
-                    </nav>
+
+                    <a href="{% url 'main:homepage' %}">ir al homepage</a>
+                    <a href="{% url 'main:login' %}">ir al login</a>
+                    <a href="{% url 'main:register'%}">ir al registro</a>
 
                     {% endblock %}
                 </div>
@@ -44,4 +30,3 @@
         </div>
     </body>
 </html>
-

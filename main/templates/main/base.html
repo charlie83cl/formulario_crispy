@@ -17,26 +17,7 @@
                 <div class="col-md-8">
                     {% block content %}
 
-                    <h1>BIENVENIDO</h1>
 
-                            {% if user.is_authenticated %}
-                            
-                            <a href="{% url 'main:homepage' %}"><h1>{{user.username}}</h1></a>
-                            </li>
-                            <br>
-                            <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main:logout' %}">Logout</a>
-                            </li>
-                            {% else %}
-                    
-                            <li class="nav-item">
-                            <a class="nav-link" href="/login">Login</a>
-                            </li>
-                    
-                            {% endif %}
-                        </ul>
-                        </div>
-                    </nav>
 
                     {% endblock %}
                 </div>
@@ -44,4 +25,3 @@
         </div>
     </body>
 </html>
-
